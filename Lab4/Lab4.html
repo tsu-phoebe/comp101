@@ -2,12 +2,26 @@
 <html>
     <head>
         <style>
-            h1{color:black;font: bold;}
+            h1{color:black;font-weight: bold;}
         </style>
     </head>
     <body>
         <h1>Pizza Cost Calculator</h1>
         <p>How many pizzas do you want?</p>
+            <input id="quantity" type="number" class="quantity-input" min="1"/>
         <p>How much does each pizza cost?</p>
+             <input id="price" type="number" class="price-input" min="1"/>
+        <p id="calculate">
+            <button onclick="calculate()">Calculate total</button></p>
+        <p id="result"></p>
+
+        <script>
+            function calculate() {
+            let quantity = Number(document.getElementById("quantity").value);
+            let price = Number(document.getElementById("price").value);
+            let total = quantity * price;
+                document.getElementById("result").innerHTML = "The total cost is $" + total + ".";
+            }
+            </script>
     </body>
 </html>
